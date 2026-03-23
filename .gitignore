@@ -1,0 +1,65 @@
+# Archivos y Directorios a Ignorar
+
+# Dependencias
+/vendor/
+node_modules/
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Logs
+/logs/*.log
+error.log
+debug.log
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Archivos de cache
+/cache/
+/tmp/
+*.cache
+
+# Archivos de uploads (excepto .gitkeep)
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# Backups de base de datos
+*.sql.gz
+*.sql.zip
+/backups/
+
+# Archivos de sesión
+/sessions/
+
+# Archivos de configuración local
+/config/local.php
+
+# Archivos compilados
+*.min.js
+*.min.css
+
+# Archivos de testing
+/coverage/
+.phpunit.result.cache
+
+# Archivos de Composer
+composer.phar
+composer.lock
+
+# Archivos de NPM
+package-lock.json
+yarn.lock

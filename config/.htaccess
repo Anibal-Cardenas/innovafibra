@@ -1,0 +1,5 @@
+# Proteger archivos de configuración
+<FilesMatch "\.(php|ini|log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

@@ -1,0 +1,23 @@
+# Habilitar RewriteEngine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirigir todo al directorio public
+    RewriteRule ^$ public/ [L]
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Protección de archivos sensibles
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# Protección de archivos de configuración
+<FilesMatch "(composer\.json|composer\.lock|package\.json|\.env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
