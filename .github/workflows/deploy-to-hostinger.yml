@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_REMOTE_PATH }} # example: /public_html or /htdocs
-          local-dir: ./public
+          local-dir: ./public/
           # optional: set port if your FTP uses a non-standard port
           # port: ${{ secrets.FTP_PORT }}
 
