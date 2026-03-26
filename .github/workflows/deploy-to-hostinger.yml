@@ -1,0 +1,27 @@
+name: Deploy to Hostinger via FTP
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  ftp-deploy:
+    name: Deploy via FTP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_REMOTE_PATH }} # example: /public_html or /htdocs
+          local-dir: ./public
+          # optional: set port if your FTP uses a non-standard port
+          # port: ${{ secrets.FTP_PORT }}
+
+      - name: Verify deployment
+        run: echo "Deployment finished"
